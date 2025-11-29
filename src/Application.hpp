@@ -2,7 +2,8 @@
 
 #include <cassert>
 #include <memory>
-
+#include "providers/seventv/SeventvPersonalEmotes.hpp"
+#include "providers/seventv/SeventvPaints.hpp"
 namespace chatterino {
 
 class Args;
