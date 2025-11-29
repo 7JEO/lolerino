@@ -180,6 +180,8 @@ private:
     std::unique_ptr<SeventvEmotes> seventvEmotes;
     std::unique_ptr<SeventvEventAPI> seventvEventAPI;
     std::unique_ptr<ILinkResolver> linkResolver;
+    std::unique_ptr<ISeventvPersonalEmotes> seventvPersonalEmotes;
+    std::unique_ptr<ISeventvPaints> seventvPaints;
     std::unique_ptr<IStreamerMode> streamerMode;
     std::unique_ptr<ITwitchUsers> twitchUsers;
     std::unique_ptr<pronouns::Pronouns> pronouns;
