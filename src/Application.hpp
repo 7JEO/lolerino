@@ -106,6 +106,8 @@ public:
     virtual FfzEmotes *getFfzEmotes() = 0;
     virtual SeventvEmotes *getSeventvEmotes() = 0;
     virtual SeventvEventAPI *getSeventvEventAPI() = 0;
+    virtual ISeventvPersonalEmotes *getSeventvPersonalEmotes() = 0;
+    virtual ISeventvPaints *getSeventvPaints() = 0;
     virtual ILinkResolver *getLinkResolver() = 0;
     virtual IStreamerMode *getStreamerMode() = 0;
     virtual ITwitchUsers *getTwitchUsers() = 0;
