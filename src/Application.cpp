@@ -441,12 +441,12 @@ IUserDataController *Application::getUserData()
 
 ISeventvPersonalEmotes *Application::getSeventvPersonalEmotes()
 {
-    return this->seventvPersonalEmotes;
+    return this->seventvPersonalEmotes.get();
 }
 
 ISeventvPaints *Application::getSeventvPaints()
 {
-    return this->seventvPaints;
+    return this->seventvPaints.get();
 }
 
 ISoundController *Application::getSound()
