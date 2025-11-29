@@ -633,6 +633,8 @@ void Application::stop()
     this->linkResolver.reset();
     this->seventvEventAPI.reset();
     this->seventvEmotes.reset();
+    this->seventvPersonalEmotes = std::make_unique<SeventvPersonalEmotes>();
+    this->seventvPaints = std::make_unique<SeventvPaints>();
     this->ffzEmotes.reset();
     this->bttvLiveUpdates.reset();
     this->bttvEmotes.reset();
