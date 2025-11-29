@@ -439,6 +439,16 @@ IUserDataController *Application::getUserData()
     return this->userData.get();
 }
 
+ISeventvPersonalEmotes *Application::getSeventvPersonalEmotes()
+{
+    return this->seventvPersonalEmotes;
+}
+
+ISeventvPaints *Application::getSeventvPaints()
+{
+    return this->seventvPaints;
+}
+
 ISoundController *Application::getSound()
 {
     assertInGuiThread();
