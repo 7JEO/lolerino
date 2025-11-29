@@ -228,7 +228,8 @@ public:
     SeventvEventAPI *getSeventvEventAPI() override;
     pronouns::Pronouns *getPronouns() override;
     eventsub::IController *getEventSub() override;
-
+    ISeventvPersonalEmotes *getSeventvPersonalEmotes() override;
+    ISeventvPaints *getSeventvPaints() override;
     ILinkResolver *getLinkResolver() override;
     IStreamerMode *getStreamerMode() override;
     ITwitchUsers *getTwitchUsers() override;
