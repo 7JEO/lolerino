@@ -49,6 +49,8 @@ class FfzEmotes;
 class SeventvEmotes;
 class SeventvEventAPI;
 class ILinkResolver;
+class ISeventvPersonalEmotes;
+class ISeventvPaints;
 class IStreamerMode;
 class ITwitchUsers;
 class NativeMessagingServer;
