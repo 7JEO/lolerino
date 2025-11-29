@@ -275,6 +275,7 @@ public:
         "/appearance/badges/useCustomFfzModeratorBadges", true};
     BoolSetting useCustomFfzVipBadges = {
         "/appearance/badges/useCustomFfzVipBadges", true};
+    BoolSetting animateSevenTVBadges = {"/appearance/messages/animateSevenTVBadges", true};
     BoolSetting showBadgesSevenTV = {"/appearance/badges/seventv", true};
     QSizeSetting lastPopupSize = {
         "/appearance/lastPopup/size",
