@@ -19,6 +19,8 @@ struct UserConnectionUpdateDispatch;
 }  // namespace seventv::eventapi
 
 class SeventvBadges;
+class SeventvPaints;
+class EmoteMap;
 
 class SeventvEventAPIPrivate;
 class SeventvEventAPI
@@ -37,6 +39,8 @@ public:
         Signal<seventv::eventapi::EmoteUpdateDispatch> emoteUpdated;
         Signal<seventv::eventapi::EmoteRemoveDispatch> emoteRemoved;
         Signal<seventv::eventapi::UserConnectionUpdateDispatch> userUpdated;
+        Signal<std::pair<QString, std::shared_ptr<const EmoteMap>>>
+            personalEmoteSetAdded;
     } signals_;  // NOLINT(readability-identifier-naming)
 
     /**

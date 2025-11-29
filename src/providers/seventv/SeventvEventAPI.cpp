@@ -9,7 +9,6 @@
 #include <utility>
 
 namespace chatterino {
-
 using namespace seventv;
 using namespace seventv::eventapi;
 using namespace Qt::StringLiterals;
@@ -127,6 +126,10 @@ void SeventvEventAPI::subscribeTwitchChannel(const QString &id)
             ChannelCondition{id},
             SubscriptionType::DeleteEntitlement,
         });
+        this->private_->subscribe({
+            ChannelCondition{id},
+            SubscriptionType::AnyEmoteSet,
+        });
     }
 }
 
@@ -163,6 +166,10 @@ void SeventvEventAPI::unsubscribeTwitchChannel(const QString &id)
         this->private_->unsubscribe({
             ChannelCondition{id},
             SubscriptionType::DeleteEntitlement,
+        });
+        this->private_->unsubscribe({
+            ChannelCondition{id},
+            SubscriptionType::AnyEmoteSet,
         });
     }
 }

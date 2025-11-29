@@ -86,7 +86,8 @@ using SeventvEmoteSetFlags = FlagsEnum<SeventvEmoteSetFlag>;
 
 namespace seventv::detail {
 
-EmoteMap parseEmotes(const QJsonArray &emoteSetEmotes, bool isGlobal);
+EmoteMap parseEmotes(const QJsonArray &emoteSetEmotes,
+                     SeventvEmoteSetKind kind);
 
 }  // namespace seventv::detail
 
@@ -119,7 +120,8 @@ public:
      */
     static std::optional<EmotePtr> addEmote(
         Atomic<std::shared_ptr<const EmoteMap>> &map,
-        const seventv::eventapi::EmoteAddDispatch &dispatch);
+        const seventv::eventapi::EmoteAddDispatch &dispatch,
+        SeventvEmoteSetKind kind = SeventvEmoteSetKind::Channel);
 
     /**
      * Updates an emote in this `map`.
@@ -130,7 +132,8 @@ public:
      */
     static std::optional<EmotePtr> updateEmote(
         Atomic<std::shared_ptr<const EmoteMap>> &map,
-        const seventv::eventapi::EmoteUpdateDispatch &dispatch);
+        const seventv::eventapi::EmoteUpdateDispatch &dispatch,
+        SeventvEmoteSetKind kind = SeventvEmoteSetKind::Channel);
 
     /**
      * Removes an emote from this `map`.
@@ -153,8 +156,10 @@ public:
      * Creates an image set from a 7TV emote or badge.
      *
      * @param emoteData { host: { files: [], url } }
+     * @param useStatic use static version if possible
      */
-    static ImageSet createImageSet(const QJsonObject &emoteData);
+    static ImageSet createImageSet(const QJsonObject &emoteData,
+                                   bool useStatic);
 
 private:
     Atomic<std::shared_ptr<const EmoteMap>> global_;

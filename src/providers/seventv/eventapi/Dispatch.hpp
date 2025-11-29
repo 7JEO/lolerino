@@ -90,4 +90,13 @@ struct EntitlementCreateDeleteDispatch {
     bool validate() const;
 };
 
+struct EmoteSetCreateDispatch {
+    QString emoteSetID;
+    bool isPersonalOrCommercial;
+
+    EmoteSetCreateDispatch(const QJsonObject &emoteSet);
+
+    bool validate() const;
+};
+
 }  // namespace chatterino::seventv::eventapi

@@ -1,5 +1,6 @@
 #include "providers/seventv/eventapi/Dispatch.hpp"
 
+#include "providers/seventv/SeventvEmotes.hpp"
 #include "util/QMagicEnum.hpp"
 
 #include <QJsonArray>
@@ -132,6 +133,21 @@ bool EntitlementCreateDeleteDispatch::validate() const
 {
     return !this->userID.isEmpty() && !this->userName.isEmpty() &&
            !this->refID.isEmpty() && this->kind != CosmeticKind::INVALID;
+}
+
+EmoteSetCreateDispatch::EmoteSetCreateDispatch(const QJsonObject &emoteSet)
+    : emoteSetID(emoteSet["id"].toString())
+    , isPersonalOrCommercial(SeventvEmoteSetFlags{
+          static_cast<SeventvEmoteSetFlag>(emoteSet["flags"].toInt()),
+      }
+                                 .hasAny(SeventvEmoteSetFlag::Personal,
+                                         SeventvEmoteSetFlag::Commercial))
+{
+}
+
+bool EmoteSetCreateDispatch::validate() const
+{
+    return !this->emoteSetID.isEmpty();
 }
 
 }  // namespace chatterino::seventv::eventapi
