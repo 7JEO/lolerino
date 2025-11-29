@@ -60,8 +60,7 @@ void SeventvBadges::registerBadge(const QJsonObject &badgeJson)
 
     auto emote = Emote{
         .name = EmoteName{},
-        .images = SeventvEmotes::createImageSet(
-            badgeJson, !getSettings()->animateSevenTVBadges),
+        .images = SeventvEmotes::createImageSet(badgeJson, !getSettings()->animateSevenTVBadges),
         .tooltip = Tooltip{badgeJson["tooltip"].toString()},
         .homePage = Url{},
         .id = EmoteId{badgeID},
@@ -77,3 +76,4 @@ void SeventvBadges::registerBadge(const QJsonObject &badgeJson)
 }
 
 }  // namespace chatterino
+
